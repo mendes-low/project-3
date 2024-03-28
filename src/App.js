@@ -1,18 +1,6 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import './assests/styles/Cards.css'; // Cards-CSS //
-import './assests/styles/Products.css' // Products-CSS //
-import { sculptureList } from './data.js';
-// import { Shower } from '@mui/icons-material';
-// import Cards from './components/Cards'
-// import Products from './components/Products';
-// import Gallery from './components/Gallery';
-import { Counter, ChangeBackgroundColor, ToggleText, ToDoList, Todo } from './components/Challenges';
-// import TestCards from './components/Test';
-
-import '../src/assests/styles/Test.css';
-import { productsList } from './data.js';
+import { productsList } from './data';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -22,7 +10,7 @@ function App() {
     <div className="App">
       <Header />
       <TestCards />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
@@ -100,73 +88,6 @@ function Footer() {
       </div>
     </footer>
   )
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function Gallery() {
-
-  const [index, setIndex] = useState(0);
-  const [showMore, setShowMore] = useState(false);
-
-  function handleClickNext() {
-
-    if (index < sculptureList.length - 1) {
-      setIndex(index + 1);
-    }
-  }
-
-  function handleClickPrev() {
-    if (index > 0) {
-      setIndex(index - 1);
-    }
-  }
-
-  function handleShowMore() {
-    setShowMore(!showMore)
-  }
-
-  let sculpture = sculptureList[index];
-
-  return (
-    <>
-      <button onClick={handleClickPrev} disabled={index === 0}>
-        Prev
-      </button>
-
-      <button onClick={handleClickNext} disabled={index === sculptureList.length - 1}>
-        Next
-      </button>
-
-      <h2>
-        <i>{sculpture.name} </i>
-        by {sculpture.artist}
-      </h2>
-      <h3>
-        ({index + 1} of {sculptureList.length})
-      </h3>
-
-      <img
-        src={sculpture.url}
-        alt={sculpture.alt}
-      />
-      <button onClick={handleShowMore}>
-        {showMore ? 'Hide' : 'Show'} datails
-      </button>
-      {showMore && <p>{sculpture.description}</p>}
-    </>
-  );
 }
 
 export default App;
