@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.card-img-filter {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background-color: rgba(0, 0, 0, 0.48);
+    color: #fff;
+    backdrop-filter: blur(0.75rem);
+}
+
+.cards-container {
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(3, 31%);
+    gap: 1rem;
+    margin: 100px 0px;
+}
+
+.wolt-card {
+    height: 280px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: all .3s ease;
+    box-shadow:
+        rgba(0, 0, 0, 0.06) 0px 0px 0.125rem 0px,
+        rgba(0, 0, 0, 0.12) 0px 0.125rem 0.125rem 0px;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.25rem;
+}
+
+.card-info p,
+.card-rating-item {
+    color: #202125a3;
+}
+
+.wolt-card:hover .card-img img {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.wolt-card:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card-img {
+    position: relative;
+    width: 100%;
+    height: 185px;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+}
+
+.card-halal,
+.card-new {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 55px;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+}
+
+.card-delivery-free {
+    position: absolute;
+    top: 80%;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 200px;
+    height: 25px;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    background-color: #009de0;
+    color: #fff;
+    border-radius: 1rem 0 0 1rem;
+    padding: 0.25rem 0.75rem;
+}
+
+#free-delivery-img {
+    filter: invert(1);
+    width: 15px;
+    height: 15px;
+}
+
+.card-halal {
+    color: rgb(32, 33, 37);
+    background-color: rgb(255, 255, 255);
+}
+
+.card-new {
+    color: white;
+    background-color: #009de0;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    transition: all .4s ease;
+}
+
+.wolt-plus-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.wolt-plus-icon span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #009de0;
+}
+
+.card-rating {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 1rem;
+    gap: 15px;
+    background: white;
+    border-top: 1px dashed #2021251f;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow:
+        rgba(0, 0, 0, 0.06) 0px 0px 0.125rem 0px,
+        rgba(0, 0, 0, 0.12) 0px 0.125rem 0.125rem 0px;
+}
+
+.card-rating-item {
+    font-size: 0.75rem;
+}
+
+.card-delivery-time {
+    font-size: 0.80rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    color: #009de0;
+    background-color: #009de014;
+}
+
+.card-delivery-time div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
